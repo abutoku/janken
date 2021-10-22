@@ -1,0 +1,194 @@
+@charset "utf-8";
+
+/* googleフォント読み込み */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap');
+
+body{
+  margin:0;
+  padding:0;
+  width:100%;
+  background: #939597;
+}
+
+.contents_wrapper {
+  width:90%;
+  margin: 0 auto;
+  background: #F2F0E9;
+}
+
+#main_section {
+  display: flex;
+}
+
+#janken_section,
+#slot_section {
+  width:50%;
+  border:2px solid gray;
+}
+
+/* ヘッダー部分 */
+header{
+    height: 96px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: 72px;
+  
+}
+
+/* 対戦相手 */
+#com_section { 
+  height: 400px;
+  display: flex;
+  justify-content: center; 
+}
+
+#com_hand {
+  text-align: center;
+  width: 70%;
+}
+
+#com_hand img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
+
+/* 結果部分 */
+#result_section{
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  position: absolute;
+  color: #F6DF4F;
+  font-size: 80px;
+  top:50% 
+}
+
+/* ボタン部分 */
+
+ul{ 
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  width:100%;
+  margin-top: 20px;
+  margin-bottom: 20px; 
+}
+
+li{
+  text-align: center;
+  list-style-type:none;
+  background-color: #939597;
+  border-radius: 50%;
+  width:15%;
+  cursor: pointer;
+  box-shadow: 5px 5px #393f4c;
+}
+
+li :hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+li:active {
+  box-shadow: none;
+  position: relative;
+  top:5px;
+  left:5px;
+}
+
+li img {
+  width: 90%;
+}
+
+/* スロットゲーム */
+
+/* ボタンのスタイルのリセット */
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+  display: block;
+}
+
+.slot_box {
+  width:90%;
+  margin: 50px auto;
+  height: 300px;
+  display: flex;
+  justify-content:center; 
+}
+
+.slot_window {
+  border:2px solid gray;
+}
+
+img {
+  width: 100%;
+}
+
+.stop_btn {
+  background: #FE646D;
+  color: white;
+  text-align: center;
+  width: 80%;
+  line-height: 40px;
+  font-size: 20px;
+  margin: 20px auto;
+  font-weight: bold;
+  border-radius: 20px; 
+  box-shadow: 5px 5px gray; 
+}
+
+.spin_btn {
+  width: 300px;
+  line-height: 80px;
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  background:#619ECC; 
+  margin: 20px auto 40px;
+  box-shadow: 5px 5px gray; 
+}
+
+/*ボタンをホバー*/
+.stop_btn:hover,
+.spin_btn:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+/* ボタンを押したとき */
+.stop_btn:active,
+.spin_btn:active {
+  box-shadow: none;
+  position: relative;
+  top:5px;
+  left: 5px;
+}
+
+footer{
+    background-color: #F6DF4F;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 48px;
+}
+
+button[disabled]{
+    background:#DCDCDC;
+}
+
+/* フッター部分 */
+footer{
+    background-color: #F6DF4F;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 48px;
+}

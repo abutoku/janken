@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <title>SLOKKEN</title>
+
+</head>
+<body>
+  <div class="contents_wrapper">
+
+    <!-- ヘッダー -->
+    <header>
+      <h1>SLOKKEN!</h1>
+    </header>
+    
+    <main id="main_section">
+
+      <section id="janken_section"> <!--じゃんけんここから-->
+
+        <div id=com_section>
+  
+          <!-- 結果部分 -->
+          <div id="result_section">
+            <div id="result"></div>
+          </div>
+  
+          <!-- コンピュータの出した手は？ -->
+          <div id="com_hand">          
+            <img src="./img/ru_jan.PNG" id = 'com_img' alt="相手">
+          </div>
+  
+        </div>
+  
+        <!-- じゃんけんボタン -->
+        <div id="btn_section">
+
+          <ul id="btn-list">
+            <li id="gu_btn"><img src="./img/gu.png" alt="グー"></li>
+            <li id="cho_btn"><img src="./img/cho.png" alt="チョキ"></li>
+            <li id="par_btn"><img src="./img/paa.png" alt="パー"></li>
+          </ul>
+
+        </div> 
+             
+      </section> <!--じゃんけんここまで--> 
+
+      <section id ="slot_section">
+
+        <div class="slot_box">
+        
+          <div class="slot_window">
+            <img src="./img/slo_mouse.jpg" id="img_01" alt="パネル">
+            <button class="stop_btn" id="btn_1" disabled>STOP</button>
+          </div>
+        
+          <div class="slot_window">
+            <img src="./img/slo_mouse.jpg" id="img_02" alt="パネル">
+            <button class="stop_btn" id="btn_2" disabled>STOP</button>
+          </div>
+        
+          <div class="slot_window">
+            <img src="./img/slo_mouse.jpg" id="img_03" alt="パネル">
+            <button class="stop_btn" id="btn_3" disabled>STOP</button>
+          </div>
+        
+        </div>
+        <!--slot_boxここまで-->
+        
+        <button id="spin_btn" class="spin_btn" disabled>SPIN</button>
+        
+      </section>
+
+    </main>
+    
+    <!-- フッター スコア部分 -->
+    <footer>
+      <p>SCORE:<span id="my_score">0</span></p>
+    </footer>
+
+  </div><!--contents_wrapperここまで-->
+
+
+  <!-- jquery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- JavaScriptの記述 -->
+  <script src="js/main.js"></script>
+
+
+ </body>
+</html>
