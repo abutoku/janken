@@ -16,6 +16,46 @@ body{
   background: #F2F0E9;
 }
 
+li {
+  list-style: none;
+}
+
+/* トップページ */
+#top_header {
+  height: 300px;
+}
+
+.top_h1 {
+  font-size: 100px;
+  padding: 80px;
+}
+#img_list {
+  display: flex;
+  justify-content: center;
+}
+
+/* トップページのフッター */
+.top_footer {
+  font-size:24px;
+  line-height: 48px;
+}
+
+#top_btn {
+  width: 400px;
+  line-height: 80px;
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  background:#FE646D; 
+  margin: 20px auto 40px;
+  box-shadow: 5px 5px gray; 
+  margin-top: 40px;
+  margin-bottom: 72px;
+}
+
+
+/* ここからメインページ!!!! */
 #main_section {
   display: flex;
 }
@@ -34,8 +74,7 @@ header{
 }
 
 h1 {
-  font-size: 72px;
-  
+  font-size: 72px; 
 }
 
 /* 対戦相手 */
@@ -68,8 +107,7 @@ h1 {
 }
 
 /* ボタン部分 */
-
-ul{ 
+#btn_section ul{ 
   padding: 0;
   display: flex;
   justify-content: space-around;
@@ -78,7 +116,7 @@ ul{
   margin-bottom: 20px; 
 }
 
-li{
+#btn_section li{
   text-align: center;
   list-style-type:none;
   background-color: #939597;
@@ -88,19 +126,19 @@ li{
   box-shadow: 5px 5px #393f4c;
 }
 
-li :hover {
+#btn_section li :hover {
   cursor: pointer;
   opacity: 0.5;
 }
 
-li:active {
+#btn_section li:active {
   box-shadow: none;
   position: relative;
   top:5px;
   left:5px;
 }
 
-li img {
+#btn_section li img {
   width: 90%;
 }
 
@@ -159,15 +197,15 @@ img {
 }
 
 /*ボタンをホバー*/
-.stop_btn:hover,
-.spin_btn:hover {
+.btn:hover,
+.btn:hover {
   opacity: 0.5;
   cursor: pointer;
 }
 
 /* ボタンを押したとき */
-.stop_btn:active,
-.spin_btn:active {
+.btn:active,
+.btn:active {
   box-shadow: none;
   position: relative;
   top:5px;
