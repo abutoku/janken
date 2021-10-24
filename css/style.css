@@ -3,6 +3,11 @@
 /* googleフォント読み込み */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap');
+
+
+
+
 body{
   margin:0;
   padding:0;
@@ -20,6 +25,10 @@ li {
   list-style: none;
 }
 
+button[disabled]{
+    background:#DCDCDC;
+}
+
 /* トップページ */
 #top_header {
   height: 300px;
@@ -28,7 +37,9 @@ li {
 .top_h1 {
   font-size: 100px;
   padding: 80px;
+  font-family: 'Bowlby One', cursive;
 }
+
 #img_list {
   display: flex;
   justify-content: center;
@@ -70,7 +81,7 @@ li {
 header{
     height: 96px;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Bowlby One', cursive;
 }
 
 h1 {
@@ -212,17 +223,6 @@ img {
   left: 5px;
 }
 
-footer{
-    background-color: #F6DF4F;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    font-size: 48px;
-}
-
-button[disabled]{
-    background:#DCDCDC;
-}
-
 /* フッター部分 */
 footer{
     background-color: #F6DF4F;
@@ -230,3 +230,4 @@ footer{
     text-align: center;
     font-size: 48px;
 }
+

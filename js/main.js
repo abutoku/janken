@@ -1,5 +1,6 @@
 'use strict'
 
+// スコアの定義
 let score = 0;
 
 //じゃんけん部分
@@ -8,7 +9,7 @@ let score = 0;
 let total = 0;
 let win = 0;
 
-// クリック回数のカウントと相手の手の関数
+// じゃんけんのクリック回数のカウントと相手の手の関数
 function com_set() {
   total++;
   const min = 0;
@@ -62,8 +63,10 @@ $('#gu_btn').on('click', function () {
   if (score >= 50) {
     $("#spin_btn").prop("disabled", false);
   }
+  if (score < 50) {
+    $("#spin_btn").prop("disabled", true);
+  }
   
-
 }); // グーボタンを押したときの動作ここまで
 
 // チョキボタンを押したときの動作
@@ -97,9 +100,12 @@ $('#cho_btn').on('click', function () {
   if (score >= 50) {
     $("#spin_btn").prop("disabled", false);
   }
-
+  if (score < 50) {
+    $("#spin_btn").prop("disabled", true);
+  }
 
 });// チョキボタンを押したときの動作ここまで
+
 
 // パーボタンを押したときの動作
 $('#par_btn').on('click', function () {
@@ -133,6 +139,9 @@ $('#par_btn').on('click', function () {
     $("#spin_btn").prop("disabled", false);
   }
 
+  if (score < 50) {
+    $("#spin_btn").prop("disabled", true);
+  }
 
 });// パーボタンを押したときの動作ここまで
 
@@ -186,8 +195,7 @@ function panel_change_3() {
 
 
 // ボタンを1を押したとき
-$('#btn_1').on('click', function () {
-  // alert('Push');      
+$('#btn_1').on('click', function () {  
   push++;
   clearInterval(panel_move_1);
   $("#btn_1").prop("disabled", true);
@@ -195,13 +203,16 @@ $('#btn_1').on('click', function () {
   if (push === 3) {
     $("#spin_btn").prop("disabled", false);
     push = 0;
-  };
+  }
+
+  if (score < 50) {
+    $("#spin_btn").prop("disabled", true);
+  }
 
 });
 
 // ボタンを2を押したとき
 $('#btn_2').on('click', function () {
-  // alert('Push');
   push++;
   clearInterval(panel_move_2);
   $("#btn_2").prop("disabled", true);
@@ -209,13 +220,16 @@ $('#btn_2').on('click', function () {
   if (push === 3) {
     $("#spin_btn").prop("disabled", false);
     push = 0;
-  };
+  }
+
+  if (score < 50) {
+    $("#spin_btn").prop("disabled", true);
+  }
 
 });
 
 // ボタンを3を押したとき
 $('#btn_3').on('click', function () {
-  // alert('Push');
   push++;
   clearInterval(panel_move_3);
   $("#btn_3").prop("disabled", true);
@@ -223,7 +237,11 @@ $('#btn_3').on('click', function () {
   if (push === 3) {
     $("#spin_btn").prop("disabled", false);
     push = 0;
-  };
+  }
+
+  if (score < 50) {
+    $("#spin_btn").prop("disabled", true);
+  }
 
 });
 
@@ -233,6 +251,8 @@ $('#btn_3').on('click', function () {
 $('#spin_btn').on('click', function () {
 
   score -= 50;
+  $('#my_score').text(`${score}`);
+
   if (score < 50) {
     $("#spin_btn").prop("disabled", true);
   }
