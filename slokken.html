@@ -20,6 +20,21 @@
     <header>
       <h1>SLOKKEN.</h1>
     </header>
+
+    <section id=#timer>
+
+
+      <div class="content">
+        <p id="timer">03:00</p><!--タイマー表示部分-->
+      </div>
+      
+      <div class="button" id="buttonBox">
+        <button id="start">
+          START
+        </button>
+      </div>
+
+    </section>
     
     <main id="main_section">
 
@@ -30,6 +45,7 @@
           <!-- 結果部分 -->
           <div id="result_section">
             <div id="result"></div>
+            <div id ="addscore"></div>
           </div>
   
           <!-- コンピュータの出した手は？ -->
@@ -45,14 +61,22 @@
           <ul id="btn-list">
             <li id="gu_btn" class="btn"><img src="./img/gu.png" alt="グー"></li>
             <li id="cho_btn" class="btn"><img src="./img/cho.png" alt="チョキ"></li>
-            <li id="par_btn" class="btn"><img src="./img/paa.png" alt="パー"></li>
+            <li id="pa_btn" class="btn"><img src="./img/paa.png" alt="パー"></li>
           </ul>
 
         </div> 
+    
              
       </section> <!--じゃんけんここまで--> 
 
       <section id ="slot_section">
+      
+        <div id="gauge-container">
+          <p>rate:<span></span></p>
+          <div id="rate_gauge">
+            <div id="gauge_inner"></div>
+          </div>
+        </div>
 
         <div class="slot_box">
         

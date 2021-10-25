@@ -6,8 +6,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap');
 
 
-
-
 body{
   margin:0;
   padding:0;
@@ -79,18 +77,37 @@ button[disabled]{
 
 /* ヘッダー部分 */
 header{
-    height: 96px;
+    height: 72px;
     text-align: center;
     font-family: 'Bowlby One', cursive;
 }
 
 h1 {
-  font-size: 72px; 
+  font-size: 56px; 
 }
+
+/* タイマー部分 */
+
+.content {
+    background-color: black;
+    font-weight: bold;
+    color:white;
+    width:300px;
+    margin:0 auto ;
+    padding:8px;
+    text-align: center;
+    font-size:48px;
+}
+
+.content p{
+    margin:0;
+    padding:0;
+}
+
 
 /* 対戦相手 */
 #com_section { 
-  height: 400px;
+  height: 350px;
   display: flex;
   justify-content: center; 
 }
@@ -109,12 +126,23 @@ h1 {
 /* 結果部分 */
 #result_section{
   text-align: center;
-  font-family: 'Roboto', sans-serif;
   font-weight: bold;
   position: absolute;
-  color: #F6DF4F;
-  font-size: 80px;
   top:50% 
+}
+
+#result {
+  font-family: 'Roboto', sans-serif;
+  color: gray;
+  opacity: 0.8;
+  font-size: 80px;
+}
+
+#addscore {
+  color: red;
+  opacity: 0.8;
+  font-size: 56px;
+  /* transition: 2s; */
 }
 
 /* ボタン部分 */
@@ -123,16 +151,16 @@ h1 {
   display: flex;
   justify-content: space-around;
   width:100%;
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 20px; 
 }
 
 #btn_section li{
   text-align: center;
   list-style-type:none;
-  background-color: #939597;
-  border-radius: 50%;
-  width:15%;
+  background-color: silver;
+  border-radius:20%;
+  width:20%;
   cursor: pointer;
   box-shadow: 5px 5px #393f4c;
 }
@@ -166,6 +194,27 @@ button {
   display: block;
 }
 
+#gauge-container {
+  margin-top: 16px; 
+}
+
+#gauge-container p {
+  margin-left: 8px;
+}
+
+#rate_gauge { 
+  border: 2px solid gray;
+  margin: 0 auto;
+  width: 90%;
+  height: 24px;
+}
+
+#gauge_inner {
+  background: greenyellow;
+  width: 100%;
+  height: 100%;
+}
+
 .slot_box {
   width:90%;
   margin: 50px auto;
@@ -176,6 +225,7 @@ button {
 
 .slot_window {
   border:2px solid gray;
+  background-color: silver;
 }
 
 img {
@@ -183,7 +233,7 @@ img {
 }
 
 .stop_btn {
-  background: #FE646D;
+  background: #619ECC;
   color: white;
   text-align: center;
   width: 80%;
@@ -202,7 +252,8 @@ img {
   color: white;
   font-weight: bold;
   border-radius: 20px;
-  background:#619ECC; 
+  background:#FE646D; 
+  
   margin: 20px auto 40px;
   box-shadow: 5px 5px gray; 
 }
