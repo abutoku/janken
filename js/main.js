@@ -73,9 +73,9 @@ let addZero = function (value) {
 }
 
 // スコアの定義
-let score = 1000;
+let score = 0;
 let plusScore = 10;
-let minusScore = 5;
+
 
 //じゃんけん部分
 
@@ -111,7 +111,6 @@ function change_pa() {
 $('#gu_btn').on('click', function () {
 
   const randomNumber = com_set();
-  // $('#timeup').removeClass('delete');
 
   if (randomNumber === 0) {
     $('#result').text('DRAW');
@@ -128,31 +127,35 @@ $('#gu_btn').on('click', function () {
   } else if (randomNumber === 2) {
     $('#result').text('LOSE...');
     change_pa();
-    if (score > 0) {
-      score -= minusScore;
-    }
+    
   }
 
   // 勝率計算
   rate = Math.floor(win / total * 100);
 
-  if (rate > 70) {
+  //スロットのスピード変更
+  if (rate > 50) {
     speed = 2000;
-  } else if (rate > 50) {
+    speedrank = "Super Slow"
+  } else if (rate > 40) {
     speed = 500;
-  } else if (rate > 30) {
+    speedrank = "Slow"
+  } else if (rate > 25) {
     speed = 200;
+    speedrank = "Nomal"
   } else {
     speed = 50;
+    speedrank = "Fast"
   }
 
   
-  $('#rate_paragraph').text(`score:${rate}%`);
+  $('#rate_paragraph').text(`Rate:${rate}%`);
+  $('#slot_speed').text(`Speed:${speedrank}`);
   $('#gauge_inner').css('width', rate + '%');
   
 
   //スコア表示の更新
-  $('#my_score').text(`scole:${score}`);
+  $('#my_score').text(`SCORE:${score}`);
 
   //ボタンの更新
   if (score >= 50) {
@@ -171,9 +174,7 @@ $('#cho_btn').on('click', function () {
   if (randomNumber === 0) {
     $('#result').text('LOSE...');
     change_gu();
-    if (score > 0) {
-      score -= minusScore;
-    }
+    
   } else if (randomNumber === 1) {
     $('#result').text('DRAW');
     change_cho();
@@ -190,22 +191,27 @@ $('#cho_btn').on('click', function () {
   // 勝率計算
   rate = Math.floor(win / total * 100);
 
-  if (rate > 70) {
+  //スロットのスピード変更
+  if (rate > 50) {
     speed = 2000;
-  } else if (rate > 50) {
+    speedrank = "Super Slow"
+  } else if (rate > 40) {
     speed = 500;
-  } else if (rate > 30) {
+    speedrank = "Slow"
+  } else if (rate > 25) {
     speed = 200;
+    speedrank = "Nomal"
   } else {
     speed = 50;
+    speedrank = "Fast"
   }
-
   
-  $('#rate_paragraph').text(`score:${rate}%`);
+  $('#rate_paragraph').text(`Rate:${rate}%`);
+  $('#slot_speed').text(`Speed:${speedrank}`);
   $('#gauge_inner').css('width', rate + '%');
 
   //スコア表示の更新
-  $('#my_score').text(`scole:${score}`);
+  $('#my_score').text(`SCORE:${score}`);
 
   //ボタンの更新
   if (score >= 50) {
@@ -233,9 +239,7 @@ $('#pa_btn').on('click', function () {
   } else if (randomNumber === 1) {
     $('#result').text('LOSE...');
     change_cho();
-    if (score > 0) {
-      score -= minusScore;
-    }
+    
   } else if (randomNumber === 2) {
     $('#result').text('DRAW');
     change_pa();
@@ -244,22 +248,28 @@ $('#pa_btn').on('click', function () {
   // 勝率計算
   rate = Math.floor(win / total * 100);
 
-  if (rate > 70) {
+  //スロットのスピード変更
+  if (rate > 50) {
     speed = 2000;
-  } else if (rate > 50) {
+    speedrank = "Super Slow" 
+  } else if (rate > 40) {
     speed = 500;
-  } else if (rate > 30) {
+    speedrank = "Slow"
+  } else if (rate > 25) {
     speed = 200;
+    speedrank = "Nomal"
   } else {
     speed = 50;
+    speedrank = "Fast"
   }
 
   
   $('#rate_paragraph').text(`Rate:${rate}%`);
+  $('#slot_speed').text(`Speed:${speedrank}`);
   $('#gauge_inner').css('width', rate + '%');
 
   //スコア表示の更新
-  $('#my_score').text(`scole:${score}`);
+  $('#my_score').text(`SCORE:${score}`);
 
   //ボタンの更新
   if (score >= 50) {
@@ -276,8 +286,10 @@ $('#pa_btn').on('click', function () {
 //じゃんけん部分ここまで！！！！
 
 //スロット部分
+
 //スロットが動くスピードの変数
 let speed = 50;
+let speedrank = "";
 
 // ストップボタンを押した回数をカウントする変数
 let push = 0;
@@ -338,25 +350,33 @@ function panel_check() {
     //ネズミが一致するとスコア0
     if (check_1 === 0 && check_2 === 0 && check_3 === 0) {
       score = 0;
-      $('#my_score').text(`${score}`);
+      $('#my_score').text(`SCORE:${score}`);
+      $('#special').text(`SCORE 0...`);
+      $('#special').fadeOut('slow');
     }
     
     //猫が一致するとスコア+5000
     if (check_1 === 1 && check_2 === 1 && check_3 === 1) {
       score += 5000;
-      $('#my_score').text(`${score}`);
+      $('#my_score').text(`SCORE:${score}`);
+      $('#special').text(`SCORE +5000`);
+      $('#special').fadeOut('slow');
     }
     
     //インコ（グレー）が一致するとスコア2倍
     if (check_1 === 2 && check_2 === 2 && check_3 === 2) {
       score *= 2;
-      $('#my_score').text(`${score}`);
+      $('#my_score').text(`SCORE:${score}`);
+      $('#special').text(`SCORE ×2`);
+      $('#special').fadeOut('slow');
     }
 
     //インコ（白）が一致するとじゃんけんに勝ったときのスコアが上昇
     if (check_1 === 3 && check_2 === 3 && check_3 === 3) {     
       plusScore += 50;
-      minusScore = 0;
+      $('#my_score').text(`SCORE:${score}`);
+      $('#special').text(`SCORE UP`);
+      $('#special').fadeOut('slow');
     }
   }
 
@@ -374,8 +394,6 @@ $('#btn_1').on('click', function () {
   //setIntervalを止める
   clearInterval(panel_move_1);
   $("#btn_1").prop("disabled", true);
-  console.log(check_1);
-
   panel_check();
 
 });
@@ -387,8 +405,6 @@ $('#btn_2').on('click', function () {
   //setIntervalを止める
   clearInterval(panel_move_2);
   $("#btn_2").prop("disabled", true);
-  console.log(check_2);
-
   panel_check();
   
 });
@@ -400,8 +416,6 @@ $('#btn_3').on('click', function () {
   //setIntervalを止める
   clearInterval(panel_move_3);
   $("#btn_3").prop("disabled", true);
-  console.log(check_3);
-
   panel_check();
   
 });
@@ -412,7 +426,7 @@ $('#btn_3').on('click', function () {
 $('#spin_btn').on('click', function () {
 
   score -= 50; //50スコアマイナス
-  $('#my_score').text(`${score}`); //スコア表示更新
+  $('#my_score').text(`SCORE:${score}`); //スコア表示更新
 
   if (score < 50) {
     $("#spin_btn").prop("disabled", true); // 50スコア未満になったらボタン無効化

@@ -5,7 +5,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap');
 
-
+/* 全体のスタイル */
 body{
   margin:0;
   padding:0;
@@ -27,7 +27,7 @@ button[disabled]{
     background:#DCDCDC;
 }
 
-/* トップページ */
+/* index.html*/
 #top_header {
   height: 300px;
 }
@@ -49,7 +49,7 @@ button[disabled]{
   line-height: 48px;
 }
 
-#top_btn {
+#play_btn {
   width: 400px;
   line-height: 80px;
   font-size: 40px;
@@ -63,7 +63,9 @@ button[disabled]{
   margin-bottom: 72px;
 }
 
-/*モーダル部分*/
+/* ここからslokken.html */
+
+/*ルールモーダル部分*/
 
 .modal_back {
   width: 100%;
@@ -89,7 +91,8 @@ button[disabled]{
 #modal_contents {
   width: 90%;
   height: 90%;
-  margin: 0 auto;
+  margin-top: 12px ;
+  margin-left: 56px;
   padding: 12px;
   font-size: 14px;
 }
@@ -115,19 +118,44 @@ span {
   color:red;
 }
 
+/* 終了画面モーダル */
 
 #timeup_inner {
   background: #DCDCDC;
   width:70%;
   height: 300px;  
   text-align: center;
-  font-family: 'Bowlby One', cursive;
+  
   z-index: 10;
   transition: 2s;
 }
 
 #timeup_h1 {
   font-size: 72px;
+  font-family: 'Bowlby One', cursive;
+}
+
+#finalscore {
+  font-size: 64px;
+  font-weight: bold;
+}
+
+#top_btn {
+  width: 300px;
+  line-height: 60px;
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  background:#FE646D; 
+  margin: 0 auto;
+  box-shadow: 5px 5px gray;  
+}
+
+#top_btn:active,
+#play_btn:active
+ {
+  box-shadow: none;
 }
 
 
@@ -141,12 +169,10 @@ span {
   margin: 20px auto;
   border-radius: 20px;
   background-color: black;
-  /* box-shadow: 5px 5px gray; */
   color: white;
   font-size: 30px;
+  /* box-shadow: 5px 5px grey; */
 }
-
-
 
 /* ここからメインページ!!!! */
 #main_section {
@@ -161,13 +187,13 @@ span {
 
 /* ヘッダー部分 */
 header{
-    height: 72px;
+    height: 64px;
     text-align: center;
     font-family: 'Bowlby One', cursive;
 }
 
 h1 {
-  font-size: 56px; 
+  font-size: 48px; 
 }
 
 /* タイマー部分 */
@@ -178,9 +204,9 @@ h1 {
     color:white;
     width:300px;
     margin:0 auto ;
-    padding:8px;
+    padding:4px;
     text-align: center;
-    font-size:48px;
+    font-size:32px;
 }
 
 .content p{
@@ -191,7 +217,7 @@ h1 {
 
 /* 対戦相手 */
 #com_section { 
-  height: 350px;
+  height: 300px;
   display: flex;
   justify-content: center; 
 }
@@ -203,7 +229,7 @@ h1 {
 
 #com_hand img {
   width: 100%;
-  height: 400px;
+  height: 300px;
   object-fit: contain;
 }
 
@@ -212,7 +238,7 @@ h1 {
   text-align: center;
   font-weight: bold;
   position: absolute;
-  top:50% ;
+  top:40% ;
   z-index:5;
 }
 
@@ -223,11 +249,11 @@ h1 {
   font-size: 80px;
 }
 
-#addscore {
+#addscore,
+#special {
   color: red;
   opacity: 0.8;
   font-size: 56px;
-  /* transition: 2s; */
 }
 
 /* ボタン部分 */
@@ -291,7 +317,7 @@ button {
   border: 2px solid gray;
   margin: 0 auto;
   width: 90%;
-  height: 24px;
+  height: 8px;
 }
 
 #gauge_inner {
@@ -302,19 +328,23 @@ button {
 
 .slot_box {
   width:90%;
-  margin: 50px auto;
-  height: 300px;
+  margin: 30px auto;
+  height: 200px;
   display: flex;
-  justify-content:center; 
+  justify-content:center;  
 }
 
 .slot_window {
   border:2px solid gray;
   background-color: silver;
+  height: 180px;
 }
 
 img {
   width: 100%;
+  height: 100%;
+  object-fit:contain;
+
 }
 
 .stop_btn {
@@ -322,8 +352,8 @@ img {
   color: white;
   text-align: center;
   width: 80%;
-  line-height: 40px;
-  font-size: 20px;
+  line-height: 30px;
+  font-size: 10px;
   margin: 20px auto;
   font-weight: bold;
   border-radius: 20px; 
@@ -332,21 +362,25 @@ img {
 
 .spin_btn {
   width: 300px;
-  line-height: 80px;
-  font-size: 40px;
+  line-height: 60px;
+  font-size: 30px;
   color: white;
   font-weight: bold;
   border-radius: 20px;
   background:#FE646D; 
-  
-  margin: 20px auto 40px;
+  margin: 60px auto 40px;
   box-shadow: 5px 5px gray; 
 }
-
+#special {
+  position: absolute;
+  top:50%;
+  font-weight: bold;
+  
+}
 /*ボタンをホバー*/
 .btn:hover,
 .btn:hover {
-  opacity: 0.5;
+  opacity: 0.8;
   cursor: pointer;
 }
 

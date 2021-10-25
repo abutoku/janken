@@ -49,23 +49,23 @@
               <img src="./img/top_mouse.PNG">
               <p>スコアが０点になる。<span>要注意</span></p>
             </div>
-  
+
           </div>
-  
-  
-  
+   
           <button id="start" class="btn">START</button>
 
         </div>
       </div>      
-    </div>
-
+    </div><!-- モーダル部分ここまで -->
+    
+    <!-- ゲーム終了画面 -->
     <div id="timeup" class="modal_back delete">
       <div id="timeup_inner">
         <h1 id="timeup_h1">TIME UP!!!!</h1>
-        <p id="finalscore"></p>
+        <p id="finalscore">score:800</p>
+        <a href="index.html"><button id="top_btn" class="btn">TOP</button></a>
       </div>
-    </div>
+    </div><!-- ゲーム終了画面ここまで -->
 
   </section>
 
@@ -86,7 +86,8 @@
     
     <main id="main_section">
 
-      <section id="janken_section"> <!--じゃんけんここから-->
+      <!--じゃんけんここから-->
+      <section id="janken_section"> 
 
         <div id=com_section>
   
@@ -117,10 +118,12 @@
              
       </section> <!--じゃんけんここまで--> 
 
+      <!-- スロットここから -->
       <section id ="slot_section">
       
         <div id="gauge-container">
           <p id="rate_paragraph">Rate</p>
+          <p id="slot_speed">Speed</p>
           <div id="rate_gauge">
             <div id="gauge_inner"></div>
           </div>
@@ -142,13 +145,15 @@
             <img src="./img/slo_mouse.jpg" id="img_03" alt="パネル">
             <button class="stop_btn btn" id="btn_3" disabled>STOP</button>
           </div>
+
+          <p id="special"></p>
         
         </div>
         <!--slot_boxここまで-->
         
         <button id="spin_btn" class="spin_btn btn" disabled>SPIN</button>
         
-      </section>
+      </section><!-- スロットここまで -->
 
     </main>
     
