@@ -17,6 +17,7 @@ body{
   width:90%;
   margin: 0 auto;
   background: #F2F0E9;
+  
 }
 
 li {
@@ -62,6 +63,56 @@ button[disabled]{
   margin-top: 40px;
   margin-bottom: 72px;
 }
+
+/*モーダル部分*/
+
+.modal_back {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal_inner {
+  background: #DCDCDC;
+  width:70%;
+  height: 500px;  
+}
+
+#timeup_inner {
+  background: #DCDCDC;
+  width:70%;
+  height: 300px;  
+  text-align: center;
+  font-family: 'Bowlby One', cursive;
+  z-index: 10;
+  transition: 2s;
+}
+
+#timeup_h1 {
+  font-size: 72px;
+}
+
+
+.delete {
+  display: none;
+  
+}
+
+#start{
+  width:200px;
+  height: 60px;
+  margin: 0 auto;
+  border-radius: 20px;
+  background-color: black;
+  /* box-shadow: 5px 5px gray; */
+  color: white;
+  font-size: 30px;
+}
+
 
 
 /* ここからメインページ!!!! */
@@ -128,7 +179,8 @@ h1 {
   text-align: center;
   font-weight: bold;
   position: absolute;
-  top:50% 
+  top:50% ;
+  z-index:5;
 }
 
 #result {

@@ -14,27 +14,43 @@
 
 </head>
 <body>
+
+  <!-- モーダル部分 -->
+  <section>
+    <!-- ルール説明 -->
+    <div id="rules" class="modal_back">
+      <div id="modal_inner">
+        <h1>遊び方</h1>
+        <p>てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。</p>
+        <p>てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。</p>
+        <p>てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。</p>
+        <button id="start" class="btn">START</button>
+      </div>      
+    </div>
+
+    <div id="timeup" class="modal_back delete">
+      <div id="timeup_inner">
+        <h1 id="timeup_h1">TIME UP!!!!</h1>
+        <p id="finalscore"></p>
+      </div>
+    </div>
+
+  </section>
+
   <div class="contents_wrapper">
 
     <!-- ヘッダー -->
     <header>
       <h1>SLOKKEN.</h1>
-    </header>
+    </header><!-- ヘッダーここまで -->
 
+
+    <!-- タイマー部分 -->
     <section id=#timer>
-
-
       <div class="content">
         <p id="timer">03:00</p><!--タイマー表示部分-->
       </div>
-      
-      <div class="button" id="buttonBox">
-        <button id="start">
-          START
-        </button>
-      </div>
-
-    </section>
+    </section><!-- タイマーここまで -->
     
     <main id="main_section">
 

@@ -12,6 +12,7 @@ var time; //経過時間
 var id; //setIntervalを止めるために代入する変数
 
 document.getElementById('start').addEventListener('click', function () {
+  $('#rules').addClass('delete');
   start = new Date(); //スタートボタンを押したときの時間を代入
     id = setInterval(goTimer, 10); //goTimerを10ミリ秒ごとに繰り返す
 });
@@ -36,7 +37,14 @@ var goTimer = function () {
     min = addZero(min);
 
     document.getElementById('timer').innerHTML = min + ':' + sec
+    
   } else if (seconds >= 180 && seconds < 240) {
+
+    if (seconds === 180) {
+      $('#finalscore').text(`score:${score}`);
+      $('#timeup').removeClass('delete'); //ゲーム終了
+    }
+
     point = point - sec * 10;
     sec = sec - min * 60;
     min = min - 3;
@@ -47,17 +55,13 @@ var goTimer = function () {
 
     document.getElementById('timer').style.color = 'red';
     document.getElementById('timer').innerHTML = min + ':' + sec
+  } else {
+    clearInterval(id);
+    document.getElementById('timer').innerHTML = '03:00:00';
+    document.getElementById('timer').style.color = 'white';
+    // document.getElementById('start').innerHTML = 'START';
   }
-  // } else {
-  //   clearInterval(id);
-  //   document.getElementById('timer').innerHTML = '03:00:00';
-  //   document.getElementById('timer').style.color = 'white';
-  //   document.getElementById('start').innerHTML = 'START';
-
-  //   document.getElementById('buttonBox').classList.remove('buttonbutton');
-  //   document.getElementById('buttonBox').classList.add('button');
-  // }
-
+  
 }
 
 //一桁だった場合に頭に0を足す
@@ -107,6 +111,7 @@ function change_pa() {
 $('#gu_btn').on('click', function () {
 
   const randomNumber = com_set();
+  // $('#timeup').removeClass('delete');
 
   if (randomNumber === 0) {
     $('#result').text('DRAW');
