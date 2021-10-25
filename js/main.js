@@ -59,7 +59,7 @@ var goTimer = function () {
     clearInterval(id);
     document.getElementById('timer').innerHTML = '03:00:00';
     document.getElementById('timer').style.color = 'white';
-    // document.getElementById('start').innerHTML = 'START';
+    
   }
   
 }
@@ -146,13 +146,13 @@ $('#gu_btn').on('click', function () {
     speed = 50;
   }
 
-  console.log(rate);
-  $('span').text(`${rate}%`)
+  
+  $('#rate_paragraph').text(`score:${rate}%`);
   $('#gauge_inner').css('width', rate + '%');
   
 
   //スコア表示の更新
-  $('#my_score').text(`${score}`);
+  $('#my_score').text(`scole:${score}`);
 
   //ボタンの更新
   if (score >= 50) {
@@ -200,12 +200,12 @@ $('#cho_btn').on('click', function () {
     speed = 50;
   }
 
-  console.log(rate);
-  $('span').text(`${rate}%`)
+  
+  $('#rate_paragraph').text(`score:${rate}%`);
   $('#gauge_inner').css('width', rate + '%');
 
   //スコア表示の更新
-  $('#my_score').text(`${score}`);
+  $('#my_score').text(`scole:${score}`);
 
   //ボタンの更新
   if (score >= 50) {
@@ -254,12 +254,12 @@ $('#pa_btn').on('click', function () {
     speed = 50;
   }
 
-  console.log(rate);
-  $('span').text(`${rate}%`)
+  
+  $('#rate_paragraph').text(`Rate:${rate}%`);
   $('#gauge_inner').css('width', rate + '%');
 
   //スコア表示の更新
-  $('#my_score').text(`${score}`);
+  $('#my_score').text(`scole:${score}`);
 
   //ボタンの更新
   if (score >= 50) {
