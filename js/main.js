@@ -77,14 +77,14 @@ let score = 0;
 let plusScore = 10;
 
 
-//じゃんけん部分
+//////////じゃんけん部分/////////
 
 // 勝率のための変数
 let total = 0;
 let win = 0;
 let rate = 0;
 
-// じゃんけんのクリック回数のカウントと相手の手の関数
+// じゃんけんのクリック回数のカウントと相手の手をランダムに決定
 function com_set() {
   total++;
   const min = 0;
@@ -107,7 +107,6 @@ function change_pa() {
   $('#com_img').attr('src', './img/pa_02.PNG');
 };
 
-
 // グーボタンを押したときの動作
 $('#gu_btn').on('click', function () {
 
@@ -127,8 +126,7 @@ $('#gu_btn').on('click', function () {
 
   } else if (randomNumber === 2) {
     $('#result').text('LOSE...');
-    change_pa();
-    
+    change_pa();  
   }
 
   // 勝率計算
@@ -152,13 +150,11 @@ $('#gu_btn').on('click', function () {
     speedrank = "Fast"
     $('#gauge_inner').css('backgroundColor', 'red');
   }
-
   
   $('#rate_paragraph').text(`Rate:${rate}%`);
   $('#slot_speed').text(`Speed:${speedrank}`);
   $('#gauge_inner').css('width', rate + '%');
-
-    
+   
   //スコア表示の更新
   $('#my_score').text(`SCORE:${score}`);
 
@@ -197,7 +193,6 @@ $('#cho_btn').on('click', function () {
   rate = Math.floor(win / total * 100);
 
   //スロットのスピード変更
-  //スロットのスピード変更
   if (rate > 40) {
     speed = 2000;
     speedrank = "Super Slow"
@@ -219,8 +214,6 @@ $('#cho_btn').on('click', function () {
   $('#rate_paragraph').text(`Rate:${rate}%`);
   $('#slot_speed').text(`Speed:${speedrank}`);
   $('#gauge_inner').css('width', rate + '%');
-
-  
 
   //スコア表示の更新
   $('#my_score').text(`SCORE:${score}`);
@@ -261,7 +254,6 @@ $('#pa_btn').on('click', function () {
   rate = Math.floor(win / total * 100);
 
   //スロットのスピード変更
-  //スロットのスピード変更
   if (rate > 40) {
     speed = 2000;
     speedrank = "Super Slow"
@@ -280,12 +272,9 @@ $('#pa_btn').on('click', function () {
     $('#gauge_inner').css('backgroundColor', 'red');
   }
 
-  
   $('#rate_paragraph').text(`Rate:${rate}%`);
   $('#slot_speed').text(`Speed:${speedrank}`);
   $('#gauge_inner').css('width', rate + '%');
-
-  
 
   //スコア表示の更新
   $('#my_score').text(`SCORE:${score}`);
@@ -299,12 +288,9 @@ $('#pa_btn').on('click', function () {
 
 });// パーボタンを押したときの動作ここまで
 
+///////じゃんけん部分ここまで！！！！//////////
 
-//じゃんけん部分ここまで！！！！
-//じゃんけん部分ここまで！！！！
-//じゃんけん部分ここまで！！！！
-
-//スロット部分
+///////////////スロット部分////////////////////
 
 //スロットが動くスピードの変数
 let speed = 50;
@@ -405,7 +391,6 @@ function panel_check() {
 
 }
 
-
 // ストップボタンを1を押したとき
 $('#btn_1').on('click', function () {  
   //プッシュ数をカウント
@@ -414,7 +399,6 @@ $('#btn_1').on('click', function () {
   clearInterval(panel_move_1);
   $("#btn_1").prop("disabled", true);
   panel_check();
-
 });
 
 // ストップボタンを2を押したとき
@@ -424,8 +408,7 @@ $('#btn_2').on('click', function () {
   //setIntervalを止める
   clearInterval(panel_move_2);
   $("#btn_2").prop("disabled", true);
-  panel_check();
-  
+  panel_check(); 
 });
 
 // ストップボタンを3を押したとき
@@ -435,11 +418,8 @@ $('#btn_3').on('click', function () {
   //setIntervalを止める
   clearInterval(panel_move_3);
   $("#btn_3").prop("disabled", true);
-  panel_check();
-  
+  panel_check();  
 });
-
-
 
 // spinボタンをを押したとき
 $('#spin_btn').on('click', function () {
@@ -476,10 +456,12 @@ $('#spin_btn').on('click', function () {
 
 });
 
+//helpウィンドウを開く
 $('#help_btn').on('click', function () {
   $('#help').removeClass('delete');
 });
 
+//helpウィンドウを閉じる
 $('#close').on('click', function () {
   $('#help').addClass('delete');
 });
