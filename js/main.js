@@ -107,6 +107,21 @@ function change_pa() {
   $('#com_img').attr('src', './img/pa_02.PNG');
 };
 
+//ゲージの色を変更
+function gaugeColor() {
+
+  if (speed = 2000) {
+    $('#gauge_inner').css('background', 'blue');
+  } else if (speed = 500) {
+    $('#gauge_inner').css('background', 'skyblue');
+  } else if (speed = 200) {
+    $('#gauge_inner').css('background', 'greenyellow');
+  } else if (speed = 50) {
+    $('#gauge_inner').css('background', 'red');
+  }
+
+}
+
 // グーボタンを押したときの動作
 $('#gu_btn').on('click', function () {
 
@@ -137,23 +152,27 @@ $('#gu_btn').on('click', function () {
   if (rate > 50) {
     speed = 2000;
     speedrank = "Super Slow"
+    $('#gauge_inner').css('backgroundColor', 'blue');
   } else if (rate > 40) {
     speed = 500;
     speedrank = "Slow"
+    $('#gauge_inner').css('backgroundColor', 'skyblue');
   } else if (rate > 25) {
     speed = 200;
     speedrank = "Nomal"
+    $('#gauge_inner').css('backgroundColor', 'greenyellow');
   } else {
     speed = 50;
     speedrank = "Fast"
+    $('#gauge_inner').css('backgroundColor', 'red');
   }
 
   
   $('#rate_paragraph').text(`Rate:${rate}%`);
   $('#slot_speed').text(`Speed:${speedrank}`);
   $('#gauge_inner').css('width', rate + '%');
-  
 
+    
   //スコア表示の更新
   $('#my_score').text(`SCORE:${score}`);
 
@@ -192,23 +211,30 @@ $('#cho_btn').on('click', function () {
   rate = Math.floor(win / total * 100);
 
   //スロットのスピード変更
+  //スロットのスピード変更
   if (rate > 50) {
     speed = 2000;
     speedrank = "Super Slow"
+    $('#gauge_inner').css('backgroundColor', 'blue');
   } else if (rate > 40) {
     speed = 500;
     speedrank = "Slow"
+    $('#gauge_inner').css('backgroundColor', 'skyblue');
   } else if (rate > 25) {
     speed = 200;
     speedrank = "Nomal"
+    $('#gauge_inner').css('backgroundColor', 'greenyellow');
   } else {
     speed = 50;
     speedrank = "Fast"
+    $('#gauge_inner').css('backgroundColor', 'red');
   }
   
   $('#rate_paragraph').text(`Rate:${rate}%`);
   $('#slot_speed').text(`Speed:${speedrank}`);
   $('#gauge_inner').css('width', rate + '%');
+
+  
 
   //スコア表示の更新
   $('#my_score').text(`SCORE:${score}`);
@@ -249,24 +275,31 @@ $('#pa_btn').on('click', function () {
   rate = Math.floor(win / total * 100);
 
   //スロットのスピード変更
+  //スロットのスピード変更
   if (rate > 50) {
     speed = 2000;
-    speedrank = "Super Slow" 
+    speedrank = "Super Slow"
+    $('#gauge_inner').css('backgroundColor', 'blue');
   } else if (rate > 40) {
     speed = 500;
     speedrank = "Slow"
+    $('#gauge_inner').css('backgroundColor', 'skyblue');
   } else if (rate > 25) {
     speed = 200;
     speedrank = "Nomal"
+    $('#gauge_inner').css('backgroundColor', 'greenyellow');
   } else {
     speed = 50;
     speedrank = "Fast"
+    $('#gauge_inner').css('backgroundColor', 'red');
   }
 
   
   $('#rate_paragraph').text(`Rate:${rate}%`);
   $('#slot_speed').text(`Speed:${speedrank}`);
   $('#gauge_inner').css('width', rate + '%');
+
+  
 
   //スコア表示の更新
   $('#my_score').text(`SCORE:${score}`);
@@ -455,4 +488,12 @@ $('#spin_btn').on('click', function () {
 // スピンボタンを無効化
   $("#spin_btn").prop("disabled", true);
 
+});
+
+$('#help_btn').on('click', function () {
+  $('#help').removeClass('delete');
+});
+
+$('#close').on('click', function () {
+  $('#help').addClass('delete');
 });

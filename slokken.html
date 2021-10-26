@@ -17,8 +17,49 @@
 
   <!-- モーダル部分 -->
   <section>
-    <!-- ルール説明 -->
+    <!-- ルール説明とスタートボタン -->
     <div id="rules" class="modal_back">
+      <div id="modal_inner">
+        <div id="modal_contents">
+          <div id= "modal_txt">            
+            <h1>制限時間は３分。高得点を目指せ！</h1>
+            <p>じゃんけんに勝つと１０点獲得！</p>
+            <p>スロットを回すには５０点必要です。</p>
+            <p>スロットを揃えるとゲームが有利になります。</p>
+            <p>じゃんけんの勝率が上がるとスロットのスピードが落ちるよー</p>
+          </div>
+          <div id="modal_list">
+  
+            <div class="modal_list">
+              <img src="./img/top_lun.PNG">
+              <p>現在のスコアが２倍！</p>
+            </div>
+
+            <div class="modal_list">
+              <img src="./img/top_ru.PNG">
+              <p>揃うたびにじゃんけんに勝ったときに獲得する点数が５０点増加</p>
+           </div>
+
+           <div class="modal_list">
+             <img src="./img/top_cat.PNG">
+             <p>5000点獲得！</p>
+            </div>
+
+            <div class="modal_list">
+              <img src="./img/top_mouse.PNG">
+              <p>スコアが０点になる。<span>要注意</span></p>
+            </div>
+
+          </div>
+   
+          <button id="start" class="btn">START</button>
+
+        </div>
+      </div>      
+    </div><!-- モーダル部分ここまで -->
+
+    <!-- ヘルプ画面 -->
+    <div id="help" class="modal_back delete">
       <div id="modal_inner">
         <div id="modal_contents">
           <div id= "modal_txt">            
@@ -52,7 +93,7 @@
 
           </div>
    
-          <button id="start" class="btn">START</button>
+          <button id="close" class="btn">CLOSE</button>
 
         </div>
       </div>      
@@ -81,6 +122,9 @@
     <section id=#timer>
       <div class="content">
         <p id="timer">03:00</p><!--タイマー表示部分-->
+      </div>
+      <div id ="help_content">
+        <button id="help_btn" class='btn'>?</button>
       </div>
     </section><!-- タイマーここまで -->
     
