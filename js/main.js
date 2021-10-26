@@ -107,20 +107,6 @@ function change_pa() {
   $('#com_img').attr('src', './img/pa_02.PNG');
 };
 
-//ゲージの色を変更
-function gaugeColor() {
-
-  if (speed = 2000) {
-    $('#gauge_inner').css('background', 'blue');
-  } else if (speed = 500) {
-    $('#gauge_inner').css('background', 'skyblue');
-  } else if (speed = 200) {
-    $('#gauge_inner').css('background', 'greenyellow');
-  } else if (speed = 50) {
-    $('#gauge_inner').css('background', 'red');
-  }
-
-}
 
 // グーボタンを押したときの動作
 $('#gu_btn').on('click', function () {
@@ -149,11 +135,11 @@ $('#gu_btn').on('click', function () {
   rate = Math.floor(win / total * 100);
 
   //スロットのスピード変更
-  if (rate > 50) {
+  if (rate > 40) {
     speed = 2000;
     speedrank = "Super Slow"
     $('#gauge_inner').css('backgroundColor', 'blue');
-  } else if (rate > 40) {
+  } else if (rate > 35) {
     speed = 500;
     speedrank = "Slow"
     $('#gauge_inner').css('backgroundColor', 'skyblue');
@@ -212,11 +198,11 @@ $('#cho_btn').on('click', function () {
 
   //スロットのスピード変更
   //スロットのスピード変更
-  if (rate > 50) {
+  if (rate > 40) {
     speed = 2000;
     speedrank = "Super Slow"
     $('#gauge_inner').css('backgroundColor', 'blue');
-  } else if (rate > 40) {
+  } else if (rate > 35) {
     speed = 500;
     speedrank = "Slow"
     $('#gauge_inner').css('backgroundColor', 'skyblue');
@@ -276,11 +262,11 @@ $('#pa_btn').on('click', function () {
 
   //スロットのスピード変更
   //スロットのスピード変更
-  if (rate > 50) {
+  if (rate > 40) {
     speed = 2000;
     speedrank = "Super Slow"
     $('#gauge_inner').css('backgroundColor', 'blue');
-  } else if (rate > 40) {
+  } else if (rate > 35) {
     speed = 500;
     speedrank = "Slow"
     $('#gauge_inner').css('backgroundColor', 'skyblue');
