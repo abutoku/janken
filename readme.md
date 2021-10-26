@@ -1,8 +1,8 @@
-#DEMO
-[https://abutoku.github.io/janken/](https://abutoku.github.io/janken/)
+# SLOKKEN
 
-# プロダクトのタイトル
-SLOKKEN
+## DEMO
+
+[https://abutoku.github.io/janken/](https://abutoku.github.io/janken/)
 
 ## プロダクトの紹介
 
